@@ -1,6 +1,6 @@
 spring:
   application:
-    name: miniature
+    name: banking
   data:
     web:
       pageable:
@@ -13,18 +13,16 @@ spring:
       quiet-period: 1s
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/miniature
-    username:  miniature
-    password:  miniature
+    url: jdbc:postgresql://localhost:5432/banking
+    username:  banking
+    password:  banking
   jpa:
     database: postgresql
     hibernate:
-      ddl-auto: none
-  flyway:
-    enabled: true
-    locations: classpath:db/migrations
-    
+      ddl-auto: create
+  jackson:
+    time-zone: UTC
+    date-format: yyyy-MM-dd
 jwt:
   secret: 7A25432A462D4A614E645267556B58703273357638792F423F4528482B4B6250
   expiration: 86400000
-
